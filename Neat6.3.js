@@ -63,7 +63,7 @@ function MakeFile()
    os = os.OpenAsTextStream( forAppending, 0 );
    var LineBreak = "+-------------------------------------------------------------------------+";
    os.write(LineBreak + cr);
-   os.write("¦Avaya Enterprise Audit Tool v6.3 Results - ");
+   os.write("Â¦Avaya Enterprise Audit Tool v6.3 Results - ");
    os.write(new Date());
    os.write(cr);
    os.write(LineBreak + cr +cr);   
@@ -86,11 +86,11 @@ function MakeFile()
    os.write(GetCCWS6PEPS());
    os.write(GetMulticast61());
    os.write(LineBreak + cr);
-   os.write("¦Operating System Info:                                                   ¦" + cr);
+   os.write("Â¦Operating System Info:                                                   Â¦" + cr);
    os.write(LineBreak + cr + cr);
    os.write(GetOS_NEW());
    os.write(LineBreak + cr);
-   os.write("¦Computer Info:                                                           ¦" + cr);
+   os.write("Â¦Computer Info:                                                           Â¦" + cr);
    os.write(LineBreak + cr + cr);
    os.write(GetCompInfo());
    os.write(cr);
@@ -110,15 +110,15 @@ function MakeFile()
    os.write(GetPATH());
    os.write(cr);
    os.write(LineBreak + cr);
-   os.write("¦Running Processes                                                        ¦" + cr);
+   os.write("Â¦Running Processes                                                        Â¦" + cr);
    os.write(LineBreak + cr + cr);
    os.write(GetPROCESS() +cr );
    os.write(LineBreak + cr);
-   os.write("¦Services                                                                 ¦" + cr);
+   os.write("Â¦Services                                                                 Â¦" + cr);
    os.write(LineBreak + cr + cr);
    os.write(chkservices());
    os.write(LineBreak + cr);
-   os.write("¦Installed Software (Through Windows Installer)                           ¦" + cr);
+   os.write("Â¦Installed Software (Through Windows Installer)                           Â¦" + cr);
    os.write(LineBreak + cr + cr);
    os.write(GetInstalledPrograms() + cr);
    os.write(GetInstalledPrograms32() + cr);
@@ -126,33 +126,33 @@ function MakeFile()
    os.write(GetRegistryValue());
    TotalMessage = "";
    os.write(LineBreak + cr);
-   os.write("¦HKEY_LOCAL_MACHINE/Software/Microsoft/Windows/CurrentVersion/Run         ¦" + cr);
+   os.write("Â¦HKEY_LOCAL_MACHINE/Software/Microsoft/Windows/CurrentVersion/Run         Â¦" + cr);
    os.write(GetRegistryValue());
    os.write(LineBreak + cr + cr);
    os.write(GetRunKey());
    os.write(cr + LineBreak + cr);
-   os.write("¦HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Run          ¦" + cr);
+   os.write("Â¦HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Run          Â¦" + cr);
    os.write(GetRegistryValue());
    os.write(LineBreak + cr + cr);
    TotalMessage = "";
    os.write(GetUserRunKey());
    os.write(cr + LineBreak + cr);
-   os.write("¦HKLM/Software/Wow6432Node/Microsoft/Windows/CurrentVersion/Run           ¦" + cr);
+   os.write("Â¦HKLM/Software/Wow6432Node/Microsoft/Windows/CurrentVersion/Run           Â¦" + cr);
    os.write(GetRegistryVal());
    os.write(LineBreak + cr + cr);
    TotalMessage ="";
    os.write(GetWow6432RunKey());
    os.write(cr);
    os.write(LineBreak + cr);
-   os.write("¦HOSTS File (Comments Excluded)                                           ¦" + cr);
+   os.write("Â¦HOSTS File (Comments Excluded)                                           Â¦" + cr);
    os.write(LineBreak + cr);
    os.write(PrintHOSTS() + cr);
    os.write(LineBreak + cr);
-   os.write("¦LMHOSTS File (Comments Excluded)                                         ¦" + cr);
+   os.write("Â¦LMHOSTS File (Comments Excluded)                                         Â¦" + cr);
    os.write(LineBreak + cr);
    os.write(PrintLMHOSTS());
    os.write(LineBreak + cr);
-   os.write("¦TCP/IP Connections                                                       ¦" + cr);
+   os.write("Â¦TCP/IP Connections                                                       Â¦" + cr);
    os.write(LineBreak + cr);
    os.write(PrintFile("C:\\netstat.log"));
    os.write(PrintFile("C:\\netstat.rte"));
@@ -218,7 +218,7 @@ function GetAACCInfo()
         var cr = "\r\n";
         var LineBreak = "+-------------------------------------------------------------------------+";
         TotalMessage = LineBreak + cr;
-        TotalMessage += "¦Contact Center Info:                                                     ¦" + cr;
+        TotalMessage += "Â¦Contact Center Info:                                                     Â¦" + cr;
         TotalMessage += LineBreak + cr + cr;
 	
 	var shell = new ActiveXObject( "WScript.Shell" );
@@ -1213,7 +1213,7 @@ function GetCCMA61()
         var shell = new ActiveXObject( "WScript.Shell" );
         var LineBreak = "+-----------------------------------------------------------------------------------+";
         TotalMessage = LineBreak + cr;
-        TotalMessage += "¦CCMA Real Time Reporting Settings:                                                 ¦" + cr;
+        TotalMessage += "Â¦CCMA Real Time Reporting Settings:                                                 Â¦" + cr;
         TotalMessage += LineBreak + cr + cr;
 	var regkey1  = "HKLM\\Software\\Wow6432Node\\Nortel\\RTD\\IP Receive";
        	var regkey2  = "HKLM\\Software\\Wow6432Node\\Nortel\\RTD\\IP Send";
@@ -1285,7 +1285,7 @@ function GetLMInfo61()
         var cr = "\r\n";
 	var LineBreak = "+-----------------------------------------------------------------------------------+";
         TotalMessage = LineBreak + cr;
-        TotalMessage += "¦License Manager Info:                                                              ¦" + cr;
+        TotalMessage += "Â¦License Manager Info:                                                              Â¦" + cr;
         TotalMessage += LineBreak + cr + cr;
         var IP
 	var shell = new ActiveXObject( "WScript.Shell" );
@@ -1339,7 +1339,7 @@ function GetHotFix()
    var TotalMessage = "", cr = "\r\n";
    var LineBreak = "+-------------------------------------------------------------------------+";
    TotalMessage = LineBreak + cr;
-   TotalMessage += "¦Hotfixes:                                                                ¦" + cr;
+   TotalMessage += "Â¦Hotfixes:                                                                Â¦" + cr;
    TotalMessage += LineBreak + cr + cr;
       
    try
@@ -1530,7 +1530,7 @@ function GetMulticast61()
 	var TAB = "\t";
         var LineBreak = "+-----------------------------------------------------------------------------------+";
         TotalMessage = LineBreak + cr;
-        TotalMessage += "¦RTD Multicast Configuration:                                                      ¦" + cr;
+        TotalMessage += "Â¦RTD Multicast Configuration:                                                      Â¦" + cr;
         TotalMessage += LineBreak + cr + cr;
 	
 	var shell = new ActiveXObject( "WScript.Shell" );
@@ -1622,7 +1622,7 @@ function GetAACC6PEPS()
         var LineBreak = "+-----------------------------------------------------------------------------------+";
         cr = "\r\n", TAB = "\t\t";
 	TotalMessage = LineBreak + cr;
-        TotalMessage +="¦Installed Patches as of: " + new Date() + "                                  ¦" + cr;
+        TotalMessage +="Â¦Installed Patches as of: " + new Date() + "                                  Â¦" + cr;
         TotalMessage += LineBreak + cr + cr;
 	RegistryPath = "SOFTWARE\\Wow6432Node\\Nortel\\Contact Center\\Product Updates\\CCMS"
 
